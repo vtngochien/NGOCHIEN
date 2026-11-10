@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Võ Thị Ngọc Hiển | Content Marketing Specialist</title>
+    <meta
+      name="description"
+      content="Portfolio cá nhân của Võ Thị Ngọc Hiển, Content Marketing Specialist với hơn 5 năm kinh nghiệm trong lĩnh vực giáo dục - đào tạo và Digital Growth."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ivory: '#FAF9F6',
+              charcoal: '#1F2937',
+              evergreen: '#2C5E4F',
+              sand: '#D97706',
+              cream: '#F4EFEA',
+              stone: '#E5E7EB',
+              muted: '#6B7280'
+            },
+            boxShadow: {
+              soft: '0 18px 40px rgba(31, 41, 55, 0.08)',
+              card: '0 22px 50px rgba(44, 94, 79, 0.08)'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: #faf9f6;
+        color: #1f2937;
+      }
+
+      .display-font {
+        font-family: 'Playfair Display', serif;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-shell {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #2c5e4f;
+      }
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.1;
+        color: #1f2937;
+      }
+
+      .hero-image {
+        position: relative;
+        background: linear-gradient(135deg, rgba(44, 94, 79, 0.16), rgba(217, 119, 6, 0.18));
+      }
+
+      .hero-image::before {
+        content: "";
+        position: absolute;
+        inset: 18px 18px -18px auto;
+        width: 160px;
+        height: 160px;
+        background: rgba(217, 119, 6, 0.15);
+        border-radius: 9999px;
+        filter: blur(2px);
+        z-index: 0;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(44, 94, 79, 0.18);
+      }
+
+      .metric-card:hover,
+      .project-card:hover,
+      .skill-card:hover,
+      .info-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(31, 41, 55, 0.08);
+      }
+
+      @media (max-width: 640px) {
+        .hero-image::before {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      #cameraTriggerBtn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 9999;
+        background: #2c5e4f;
+        color: #faf9f6;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      #cameraTriggerBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(44, 94, 79, 0.2);
+      }
+
+      .falling-camera {
+        position: fixed;
+        top: -60px;
+        z-index: 9998;
+        pointer-events: none;
+        user-select: none;
+        animation: cameraFallAndBounce linear forwards;
+      }
+
+      @keyframes cameraFallAndBounce {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        75% {
+          transform: translateY(calc(100vh - 50px)) rotate(180deg);
+          opacity: 1;
+        }
+        85% {
+          transform: translateY(calc(100vh - 90px)) rotate(200deg);
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateY(calc(100vh - 40px)) rotate(220deg);
+          opacity: 0;
+        }
+      }
+
+      .music-player {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 9997;
+        width: min(340px, calc(100vw - 28px));
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 18px 40px rgba(31, 41, 55, 0.12);
+        border-radius: 22px;
+        padding: 12px 14px;
+      }
+
+      .music-player-inner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .album-disc {
+        position: relative;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #fefefe 0 6%, #2c5e4f 7% 18%, #1f2937 18% 44%, #2c5e4f 45% 48%, #1f2937 49% 100%);
+        flex-shrink: 0;
+        box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.18), 0 8px 18px rgba(28, 61, 52, 0.2);
+        animation: spinDisc 2s linear infinite;
+        animation-play-state: paused;
+      }
+
+      .album-disc::before {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border-radius: 50%;
+        background: #faf9f6;
+        border: 2px solid rgba(44, 94, 79, 0.35);
+      }
+
+      .album-disc.playing {
+        animation-play-state: running;
+      }
+
+      @keyframes spinDisc {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .music-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .song-marquee {
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #1f2937;
+      }
+
+      .song-marquee span {
+        display: inline-block;
+        min-width: 100%;
+        animation: marquee 12s linear infinite;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-24%);
+        }
+      }
+
+      .music-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .play-toggle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #2c5e4f, #214d41);
+        color: #faf9f6;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 16px rgba(44, 94, 79, 0.2);
+      }
+
+      .volume-wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+      }
+
+      .volume-wrap input[type='range'] {
+        flex: 1;
+        accent-color: #d97706;
+      }
+
+      .equalizer {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        height: 18px;
+        padding: 0 4px;
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .equalizer.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .equalizer span {
+        display: block;
+        width: 5px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #d97706, #2c5e4f);
+        animation: bounceBar 0.8s ease-in-out infinite alternate;
+      }
+
+      .equalizer span:nth-child(1) { animation-delay: 0s; }
+      .equalizer span:nth-child(2) { animation-delay: 0.12s; }
+      .equalizer span:nth-child(3) { animation-delay: 0.24s; }
+      .equalizer span:nth-child(4) { animation-delay: 0.36s; }
+      .equalizer span:nth-child(5) { animation-delay: 0.48s; }
+
+      @keyframes bounceBar {
+        from {
+          height: 4px;
+          opacity: 0.7;
+        }
+        to {
+          height: 18px;
+          opacity: 1;
+        }
+      }
+
+      .note-burst {
+        position: fixed;
+        left: 150px;
+        bottom: 80px;
+        z-index: 9996;
+        font-size: 16px;
+        color: rgba(44, 94, 79, 0.8);
+        pointer-events: none;
+        user-select: none;
+        animation: noteRise 1.6s ease-out forwards;
+      }
+
+      @keyframes noteRise {
+        0% {
+          opacity: 0;
+          transform: translateY(8px) scale(0.7);
+        }
+        18% {
+          opacity: 1;
+          transform: translateY(-4px) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-42px) translateX(16px) scale(1.2);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .music-player {
+          left: 12px;
+          right: 12px;
+          width: auto;
+          bottom: 76px;
+        }
+
+        #cameraTriggerBtn {
+          right: 12px;
+          bottom: 12px;
+          padding: 9px 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-ivory/85 backdrop-blur-md">
+      <nav class="section-shell flex items-center justify-between px-4 py-4 lg:px-6">
+        <a href="#top" class="flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-evergreen text-sm font-bold text-white shadow-soft">NH</span>
+          <div>
+            <div class="text-sm font-semibold uppercase tracking-[0.2em] text-evergreen">Ngọc Hiển</div>
+            <div class="text-[10px] text-slate-500">Content Marketing</div>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm font-medium text-charcoal md:flex">
+          <a href="#about" class="transition hover:text-evergreen">Giới thiệu</a>
+          <a href="#experience" class="transition hover:text-evergreen">Kinh nghiệm</a>
+          <a href="#campaigns" class="transition hover:text-evergreen">Dự án</a>
+          <a href="#skills" class="transition hover:text-evergreen">Kỹ năng</a>
+          <a href="#contact" class="transition hover:text-evergreen">Liên hệ</a>
+        </div>
+
+        <a
+          href="#contact"
+          class="hidden rounded-full bg-evergreen px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:bg-[#244d40] md:inline-flex"
+        >
+          Hợp tác ngay
+        </a>
+      </nav>
+    </header>
+
+    <main id="top" class="pt-28">
+      <section class="section-shell px-4 pb-10 pt-8 lg:px-6 lg:pb-16 lg:pt-10">
+        <div class="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <div class="reveal">
+            <div class="eyebrow mb-4">Growth Content Strategist</div>
+            <h1 class="display-font text-4xl font-semibold leading-tight text-charcoal md:text-5xl lg:text-6xl">
+              Võ Thị Ngọc Hiển
+            </h1>
+            <p class="mt-4 text-xl font-semibold text-evergreen md:text-2xl">Content Marketing Specialist</p>
+            <p class="mt-5 max-w-xl text-base leading-8 text-slate-600 md:text-lg">
+              Tôi mang đến chiến lược nội dung tăng trưởng bền vững, thích ứng với xu hướng thị trường và tối ưu hóa trải nghiệm người dùng để tăng traffic, leads và thương hiệu một cách rõ ràng, hiệu quả.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#"
+                download
+                class="inline-flex items-center rounded-full bg-evergreen px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-[#244d40]"
+              >
+                Tải CV (PDF)
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-charcoal transition hover:border-evergreen hover:text-evergreen"
+              >
+                Liên hệ hợp tác
+              </a>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-5 text-sm text-slate-600">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-evergreen"></span>
+                Giáo dục - Đào tạo
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-sand"></span>
+                Content Strategy
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-charcoal"></span>
+                Brand Storytelling
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal relative">
+            <div class="hero-image relative mx-auto max-w-md rounded-[2rem] border border-white/60 bg-white p-4 shadow-card">
+              <!-- Chèn ảnh chân dung ở đây -->
+              <!-- Chèn ảnh chân dung ở đây -->
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80"
+                alt="Portrait of Võ Thị Ngọc Hiển"
+                class="h-[520px] w-full rounded-[1.6rem] object-cover object-center"
+              />
+            </div>
+            <div class="glass-card absolute -bottom-4 left-4 rounded-2xl border border-white/60 p-4 shadow-soft">
+              <div class="text-xs uppercase tracking-[0.2em] text-slate-500">Focus</div>
+              <div class="mt-2 text-xl font-semibold text-charcoal">Growth Content</div>
+              <div class="text-sm text-slate-600">Traffic, leads & brand trust</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-charcoal text-white">
+        <div class="section-shell grid gap-4 px-4 py-8 md:grid-cols-2 lg:grid-cols-4 lg:px-6 lg:py-10">
+          <div class="metric-card rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300">
+            <div class="text-3xl font-bold text-sand">5+</div>
+            <div class="mt-2 text-sm uppercase tracking-[0.14em] text-slate-300">Năm kinh nghiệm</div>
+          </div>
+          <div class="metric-card rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300">
+            <div class="text-3xl font-bold text-sand">+28%</div>
+            <div class="mt-2 text-sm uppercase tracking-[0.14em] text-slate-300">Referral Traffic (318k/tháng)</div>
+          </div>
+          <div class="metric-card rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300">
+            <div class="text-3xl font-bold text-sand">+285%</div>
+            <div class="mt-2 text-sm uppercase tracking-[0.14em] text-slate-300">Brand Mention</div>
+          </div>
+          <div class="metric-card rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300">
+            <div class="text-3xl font-bold text-sand">35%</div>
+            <div class="mt-2 text-sm uppercase tracking-[0.14em] text-slate-300">Tiết kiệm chi phí sản xuất</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-shell px-4 py-20 lg:px-6">
+        <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div class="reveal">
+            <div class="eyebrow mb-5">Về tôi</div>
+            <h2 class="section-title">Tạo nội dung có mục tiêu, có chiều sâu và có khả năng thúc đẩy tăng trưởng.</h2>
+          </div>
+          <div class="reveal space-y-6 text-base leading-8 text-slate-600">
+            <p>
+              Với hơn 5 năm kinh nghiệm trong lĩnh vực Content Marketing, tôi đã phát triển kỹ năng xây dựng nội dung chiến lược ở nhiều lĩnh vực, đặc biệt là Giáo dục - Đào tạo. Tôi không chỉ viết để thu hút mà còn viết để chuyển đổi, khơi gợi hành vi và tạo sự tin cậy cho thương hiệu.
+            </p>
+            <p>
+              Mục tiêu của tôi trong 2 năm tới là trở thành Leader Content Marketing, trực tiếp triển khai các chiến dịch mới, định hình hệ thống nội dung sáng tạo và góp phần thúc đẩy tăng trưởng bền vững cho doanh nghiệp qua những câu chuyện chính xác, có nhịp độ và phù hợp với từng giai đoạn phát triển của thương hiệu.
+            </p>
+            <div class="inline-flex items-center gap-3 rounded-full border border-evergreen/20 bg-evergreen/5 px-4 py-2 text-sm font-medium text-evergreen">
+              <span class="h-2.5 w-2.5 rounded-full bg-evergreen"></span>
+              Chuyên sâu về giáo dục, chuyển đổi thương hiệu và content growth
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="bg-white/70 py-20">
+        <div class="section-shell px-4 lg:px-6">
+          <div class="mb-12 reveal">
+            <div class="eyebrow mb-3">Kinh nghiệm</div>
+            <h2 class="section-title">Lộ trình phát triển và đóng góp thực tế</h2>
+          </div>
+
+          <div class="timeline relative ml-2 space-y-8 pl-9">
+            <article class="reveal relative rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="absolute -left-[2.3rem] top-8 flex h-9 w-9 items-center justify-center rounded-full bg-evergreen text-xs font-bold text-white shadow-soft">01</div>
+              <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p class="text-lg font-semibold text-charcoal">Chuyên viên Content Marketing</p>
+                  <p class="text-base text-evergreen">SVT Investment & Development Co., Ltd</p>
+                </div>
+                <span class="rounded-full bg-evergreen/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-evergreen">08/2019 - Nay</span>
+              </div>
+              <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+                <li>• Lên kế hoạch, trực tiếp xây dựng và triển khai nội dung cho các kênh Facebook, Zalo, Instagram và TikTok.</li>
+                <li>• Sản xuất nội dung chạy quảng cáo cho sản phẩm ứng dụng học ngoại ngữ LittleMe trên Facebook.</li>
+                <li>• Tăng trưởng referral traffic từ 248.000/tháng lên 318.000/tháng, tương đương +28% nhờ hệ thống nội dung bắt trend hàng ngày.</li>
+                <li>• Xây dựng các bài quiz tương tác với trung bình 520 leads/tháng, tỷ lệ chuyển đổi 18.5%.</li>
+                <li>• Áp dụng mô hình sản xuất content tinh gọn giúp tiết kiệm 35% chi phí so với phương án thông thường.</li>
+                <li>• Tăng tỷ lệ thương hiệu được nhắc đến cộng đồng mạng lên +285% so với tháng 06/2022.</li>
+              </ul>
+            </article>
+
+            <article class="reveal relative rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="absolute -left-[2.3rem] top-8 flex h-9 w-9 items-center justify-center rounded-full bg-sand text-xs font-bold text-white shadow-soft">02</div>
+              <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p class="text-lg font-semibold text-charcoal">Thành viên Ban Chuyên môn</p>
+                  <p class="text-base text-evergreen">CLB Truyền thông và Sự kiện TopCV</p>
+                </div>
+                <span class="rounded-full bg-sand/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-sand">2016 - 2018</span>
+              </div>
+              <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+                <li>• Quản lý Fanpage và xây dựng nội dung giúp tăng 2.000 lượt theo dõi sau 1 năm.</li>
+                <li>• Hỗ trợ thiết kế hình ảnh và video phục vụ các hoạt động truyền thông của CLB.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="campaigns" class="section-shell px-4 py-20 lg:px-6">
+        <div class="mb-12 reveal">
+          <div class="eyebrow mb-3">Featured Campaigns</div>
+          <h2 class="section-title">Các chiến dịch và dự án tiêu biểu</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="project-card reveal overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft transition duration-300">
+            <div class="h-56 overflow-hidden bg-slate-200">
+              <!-- Chèn ảnh minh họa dự án 1 ở đây -->
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+                alt="Chiến dịch quảng bá App học ngoại ngữ LittleMe"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3 inline-flex rounded-full bg-evergreen/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-evergreen">Ứng dụng học ngoại ngữ</div>
+              <h3 class="text-2xl font-semibold text-charcoal">LittleMe Campaign</h3>
+              <p class="mt-4 text-base leading-7 text-slate-600">
+                Tối ưu nội dung quảng cáo, mô tả giá trị cốt lõi của ứng dụng bằng storytelling ngắn, sinh động, gắn với nhu cầu học tập thực tế của học sinh và phụ huynh.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft transition duration-300">
+            <div class="h-56 overflow-hidden bg-slate-200">
+              <!-- Chèn ảnh minh họa dự án 2 ở đây -->
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                alt="Chuỗi bài quiz tương tác thu hút leads"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3 inline-flex rounded-full bg-sand/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-sand">Interactive Content</div>
+              <h3 class="text-2xl font-semibold text-charcoal">Quiz tương tác</h3>
+              <p class="mt-4 text-base leading-7 text-slate-600">
+                Thiết kế chuỗi bài quiz tương tác và CTA rõ ràng, mang lại trung bình 520 leads/tháng, góp phần nâng tỷ lệ chuyển đổi lên 18.5% trong chiến dịch tuyển sinh và thuyết phục khách hàng.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft transition duration-300 md:col-span-2 xl:col-span-1">
+            <div class="h-56 overflow-hidden bg-slate-200">
+              <!-- Chèn ảnh minh họa dự án 3 ở đây -->
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+                alt="Chiến lược nội dung bắt trend tăng trưởng traffic tự nhiên"
+                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-3 inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-amber-700">Organic Growth</div>
+              <h3 class="text-2xl font-semibold text-charcoal">Trend-driven Content</h3>
+              <p class="mt-4 text-base leading-7 text-slate-600">
+                Xây dựng nội dung theo xu hướng và ngữ cảnh thị trường, tăng cường traffic từ nguồn referral và thúc đẩy độ nhận diện thương hiệu trên không gian mạng xã hội.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="bg-white/70 py-20">
+        <div class="section-shell px-4 lg:px-6">
+          <div class="grid gap-8 lg:grid-cols-2">
+            <div class="reveal">
+              <div class="eyebrow mb-3">Kỹ năng</div>
+              <h2 class="section-title mb-6">Năng lực chuyên môn và kỹ năng mềm</h2>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="skill-card rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition duration-300">
+                  <div class="text-sm font-semibold uppercase tracking-[0.12em] text-evergreen">Content Strategy</div>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">Xây dựng kế hoạch nội dung, đối tượng mục tiêu, hành trình người dùng và định hướng chiến lược tăng trưởng.</p>
+                </div>
+                <div class="skill-card rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition duration-300">
+                  <div class="text-sm font-semibold uppercase tracking-[0.12em] text-evergreen">Social Content</div>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">Biên tập nội dung cho Facebook, Zalo, Instagram, TikTok theo nhịp và xu hướng tương tác.</p>
+                </div>
+                <div class="skill-card rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition duration-300">
+                  <div class="text-sm font-semibold uppercase tracking-[0.12em] text-evergreen">Lead Generation</div>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">Thiết kế CTA hiệu quả, bài quiz mang tính tương tác, tối ưu chuyển đổi từ traffic sang leads.</p>
+                </div>
+                <div class="skill-card rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition duration-300">
+                  <div class="text-sm font-semibold uppercase tracking-[0.12em] text-evergreen">Brand Positioning</div>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">Nâng tầm hình ảnh thương hiệu thông qua câu chuyện phù hợp và nhịp nội dung bền vững.</p>
+                </div>
+                <div class="skill-card rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition duration-300 sm:col-span-2">
+                  <div class="text-sm font-semibold uppercase tracking-[0.12em] text-evergreen">Kỹ năng mềm</div>
+                  <div class="mt-3 flex flex-wrap gap-2 text-sm text-slate-600">
+                    <span class="rounded-full bg-slate-100 px-3 py-1.5">Giao tiếp</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1.5">Lắng nghe</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1.5">Đàm phán</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1.5">Giải quyết vấn đề</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1.5">Làm việc dưới áp lực</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal space-y-5">
+              <div class="eyebrow mb-3">Học vấn & Thành tựu</div>
+              <div class="info-card rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft transition duration-300">
+                <h3 class="text-xl font-semibold text-charcoal">Học vấn</h3>
+                <p class="mt-4 text-base font-medium text-evergreen">Đại học TopCV</p>
+                <p class="mt-2 text-sm text-slate-600">2015 - 2019 | Truyền thông đại chúng</p>
+                <p class="mt-3 text-sm text-slate-600">Xếp loại: Xuất sắc</p>
+              </div>
+
+              <div class="info-card rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft transition duration-300">
+                <h3 class="text-xl font-semibold text-charcoal">Chứng chỉ</h3>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                  <li>• 2023: HubSpot Content Marketing Certification</li>
+                  <li>• 2021: Google Digital Garage - Fundamentals of Digital Marketing</li>
+                </ul>
+              </div>
+
+              <div class="info-card rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft transition duration-300">
+                <h3 class="text-xl font-semibold text-charcoal">Giải thưởng</h3>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                  <li>• 2024: Employee of the Year Award</li>
+                  <li>• 2022: Top Performer of the Year</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-shell px-4 py-20 lg:px-6">
+        <div class="mb-12 reveal">
+          <div class="eyebrow mb-3">Người tham chiếu & Liên hệ</div>
+          <h2 class="section-title">Đồng hành cùng những chiến lược nội dung có chiều sâu.</h2>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="reveal rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-xl font-semibold text-charcoal">Người tham chiếu</h3>
+            <div class="mt-5 rounded-2xl bg-cream p-5">
+              <div class="text-lg font-semibold text-charcoal">Đỗ Quỳnh Mai</div>
+              <div class="mt-2 text-sm text-slate-600">HR Director</div>
+              <div class="mt-4 text-sm text-slate-600">SVT Investment & Development Co., Ltd</div>
+              <div class="mt-2 text-sm font-medium text-evergreen">Tel: (024) 6680 5588</div>
+            </div>
+
+            <div class="mt-8 space-y-4 text-sm text-slate-600">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="font-medium text-charcoal">Điện thoại</span>
+                <span>(024) 6680 5588</span>
+              </div>
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="font-medium text-charcoal">Ngày sinh</span>
+                <span>06/12/1993</span>
+              </div>
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="font-medium text-charcoal">Email</span>
+                <span>hotro@topcv.vn</span>
+              </div>
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="font-medium text-charcoal">Website</span>
+                <span>be.net/tencuaban</span>
+              </div>
+              <div class="flex items-center justify-between pb-2">
+                <span class="font-medium text-charcoal">Địa chỉ</span>
+                <span>Ba Đình, Hà Nội</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-xl font-semibold text-charcoal">Gửi tin nhắn</h3>
+            <form class="mt-6 space-y-4" onsubmit="event.preventDefault(); this.reset(); alert('Cảm ơn bạn! Tin nhắn của bạn đã được ghi nhận.');">
+              <div class="grid gap-4 md:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="Họ và tên"
+                  class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-charcoal outline-none transition focus:border-evergreen focus:bg-white"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-charcoal outline-none transition focus:border-evergreen focus:bg-white"
+                  required
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Chủ đề"
+                class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-charcoal outline-none transition focus:border-evergreen focus:bg-white"
+              />
+              <textarea
+                rows="5"
+                placeholder="Nội dung tin nhắn"
+                class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-charcoal outline-none transition focus:border-evergreen focus:bg-white"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                class="inline-flex rounded-full bg-evergreen px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[#244d40]"
+              >
+                Gửi liên hệ
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white/80">
+      <div class="section-shell flex flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-slate-600 md:flex-row lg:px-6">
+        <p>© 2025 Võ Thị Ngọc Hiển | Content Marketing Specialist</p>
+        <div class="flex items-center gap-4">
+          <a href="#about" class="transition hover:text-evergreen">Giới thiệu</a>
+          <a href="#experience" class="transition hover:text-evergreen">Kinh nghiệm</a>
+          <a href="#contact" class="transition hover:text-evergreen">Liên hệ</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="music-player" aria-label="Music player">
+      <div class="music-player-inner">
+        <div id="albumDisc" class="album-disc" aria-hidden="true"></div>
+
+        <div class="music-info">
+          <div class="song-marquee">
+            <span>Day By Day - T-ARA</span>
+          </div>
+
+          <div class="music-controls">
+            <button id="playPauseBtn" class="play-toggle" type="button" aria-label="Play/Pause music">▶</button>
+            <div class="equalizer" id="equalizer" aria-hidden="true">
+              <span style="height: 8px"></span>
+              <span style="height: 14px"></span>
+              <span style="height: 12px"></span>
+              <span style="height: 18px"></span>
+              <span style="height: 10px"></span>
+            </div>
+            <div class="volume-wrap">
+              <span style="font-size: 0.8rem; color: #2c5e4f;">🔊</span>
+              <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume control" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="cameraTriggerBtn" type="button" aria-label="Thả máy ảnh">📸 Thả máy ảnh</button>
+
+    <audio id="bgMusic" loop preload="auto" aria-label="Background music">
+      <!-- Dán link file MP3 của bài Day By Day - T-ARA tại đây nếu có: <source src="URL_MUSIC_FILE.mp3" type="audio/mpeg" /> -->
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const revealItems = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+
+      const cameraSVG = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2C5E4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 100%; height: 100%;">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
+      `;
+
+      function createSingleCamera() {
+        const cam = document.createElement('div');
+        cam.classList.add('falling-camera');
+        cam.innerHTML = cameraSVG;
+
+        const size = Math.floor(Math.random() * 22) + 24;
+        cam.style.width = size + 'px';
+        cam.style.height = size + 'px';
+        cam.style.left = Math.random() * 95 + 'vw';
+
+        const duration = (Math.random() * 2 + 2.5).toFixed(2);
+        cam.style.animationDuration = duration + 's';
+
+        document.body.appendChild(cam);
+
+        setTimeout(() => {
+          cam.remove();
+        }, duration * 1000);
+      }
+
+      function triggerCameraRain() {
+        for (let i = 0; i < 18; i++) {
+          setTimeout(createSingleCamera, i * 140);
+        }
+      }
+
+      const cameraTriggerBtn = document.getElementById('cameraTriggerBtn');
+      cameraTriggerBtn.addEventListener('click', triggerCameraRain);
+
+      const music = document.getElementById('bgMusic');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const albumDisc = document.getElementById('albumDisc');
+      const equalizer = document.getElementById('equalizer');
+      const volumeControl = document.getElementById('volumeControl');
+
+      function createNoteBurst() {
+        const notes = ['♪', '♫'];
+        const note = document.createElement('div');
+        note.className = 'note-burst';
+        note.textContent = notes[Math.floor(Math.random() * notes.length)];
+        note.style.left = (150 + Math.random() * 180) + 'px';
+        note.style.bottom = (70 + Math.random() * 40) + 'px';
+        note.style.color = Math.random() > 0.5 ? '#2C5E4F' : '#D97706';
+        document.body.appendChild(note);
+
+        setTimeout(() => note.remove(), 1600);
+      }
+
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+          playPauseBtn.textContent = '❚❚';
+          albumDisc.classList.add('playing');
+          equalizer.classList.add('visible');
+          triggerCameraRain();
+          const noteInterval = setInterval(() => {
+            if (!music.paused) {
+              createNoteBurst();
+            } else {
+              clearInterval(noteInterval);
+            }
+          }, 500);
+        } else {
+          music.pause();
+          playPauseBtn.textContent = '▶';
+          albumDisc.classList.remove('playing');
+          equalizer.classList.remove('visible');
+        }
+      }
+
+      playPauseBtn.addEventListener('click', toggleMusic);
+      volumeControl.addEventListener('input', (e) => {
+        music.volume = Number(e.target.value);
+      });
+
+      music.volume = Number(volumeControl.value);
+
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          triggerCameraRain();
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
